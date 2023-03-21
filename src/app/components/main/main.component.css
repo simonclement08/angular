@@ -1,0 +1,40 @@
+/* Styles pour la liste des tâches */
+.task-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .task-list li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .task-list li:last-of-type {
+    border-bottom: none;
+  }
+  
+  .task-list li .task-title {
+    flex-grow: 1;
+    font-size: 1.2rem;
+    color: #333;
+  }
+  
+  .task-list li .task-status {
+    font-size: 1.2rem;
+    color: #888;
+    margin-left: 1rem;
+  }
+  
+  .task-list li.completed {
+    background-color: #f2f2f2;
+    color: #888;
+  }
+  
+  .task-list li.completed .task-title {
+    text-decoration: line-through;
+    color: #888;
+  }

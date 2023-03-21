@@ -1,0 +1,7 @@
+<h2>Liste des tâches</h2>
+<ul class="task-list">
+    <li [ngClass]="{ 'completed': task.completed }" *ngFor="let task of tasks">
+      <span class="task-title">{{ task.title }}</span>
+      <span class="task-status" [innerHTML]="task.completed ? '&#x2713;' : '&#x2717;'"></span>
+    </li>
+</ul>
