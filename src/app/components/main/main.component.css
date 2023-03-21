@@ -22,6 +22,10 @@
     font-size: 1.2rem;
     color: #333;
   }
+
+  .task-list li.focused {
+    background-color: #5e5757 !important;
+  }
   
   .task-list li .task-status {
     font-size: 1.2rem;
