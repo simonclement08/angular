@@ -4,4 +4,14 @@ import { Component } from '@angular/core';
   selector: 'app-root',
   templateUrl: './app.component.html'
 })
-export class AppComponent {}
+export class AppComponent {
+  counter = 0;
+
+  incrementCounter() {
+    this.counter++;
+  }
+
+  decrementCounter() {
+    this.counter--;
+  }
+}
