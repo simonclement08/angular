@@ -7,6 +7,7 @@ import { MovieComponent } from './components/movie/movie.component';
 import { FavorisComponent } from './components/favoris/favoris.component';
 import { AppRoutingModule } from './app-routing.module';
 import { NavComponent } from './components/nav/nav.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,7 @@ import { NavComponent } from './components/nav/nav.component';
     FavorisComponent,
     NavComponent,
   ],
-  imports: [ BrowserModule, AppRoutingModule ],
+  imports: [ BrowserModule, AppRoutingModule, HttpClientModule ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule {}

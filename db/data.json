@@ -1,0 +1,59 @@
+{
+  "movies": [
+    {
+      "id": 1,
+      "title": "Le Parrain",
+      "poster": "https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/81bpUqC2F0S._AC_SY679_.jpg",
+      "releaseYear": 1972,
+      "categories": [
+        {
+          "id": 1,
+          "label": "Drame"
+        },
+        {
+          "id": 2,
+          "label": "Crime"
+        }
+      ],
+      "isFavorite": true
+    },
+    {
+      "id": 2,
+      "title": "Forrest Gump",
+      "poster": "https://images.affiches-et-posters.com//albums/3/2670/medium/2670-affiche-du-film-forrest-gump.jpg",
+      "releaseYear": 1994,
+      "categories": [
+        {
+          "id": 3,
+          "label": "Comédie dramatique"
+        },
+        {
+          "id": 4,
+          "label": "Romance"
+        }
+      ],
+      "isFavorite": true
+    },
+    {
+      "id": 3,
+      "title": "The Dark Knight",
+      "poster": "https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/81rGCm0PyHL._AC_SL1500_.jpg",
+      "releaseYear": 2008,
+      "categories": [
+        {
+          "id": 5,
+          "label": "Action"
+        },
+        {
+          "id": 1,
+          "label": "Drame"
+        },
+        {
+          "id": 6,
+          "label": "Thriller"
+        }
+      ],
+      "isFavorite": false
+    }
+  ]
+}

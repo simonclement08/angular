@@ -1,23 +1,22 @@
+<h1>Catalogue</h1>
+
 <div class="container">
     <div class="row">
       <div class="col-sm-12 col-md-6">
-        <label for="filter">Filter by name:</label>
+        <label for="filter">Rechercher un film :</label>
         <input type="text" id="filter" >
       </div>
     </div>
     <div class="row mt-3">
-      <div class="col-sm-12" *ngIf="filteredMovies.length === 0">
-        <p>No movies found.</p>
-      </div>
-      <div class="col-sm-6 col-md-4 col-lg-3" *ngFor="let movie of filteredMovies">
+      <div class="col-sm-6 col-md-4 col-lg-3" *ngFor="let movie of movies$ |async">
         <div class="card mb-3">
           <img [src]="movie.poster" class="card-img-top" alt="{{movie.title}}">
           <div class="card-body">
             <h5 (click)="toggleFavori(movie)" class="card-title" [class.favori]="movie.isFavorite" [class.notfavori]="!movie.isFavorite">{{movie.title}}</h5>
-            <p class="card-text">Release Year: {{movie.releaseYear}}</p>
-            <p class="card-text">Categories:</p>
+            <p class="card-text">Sortie en {{movie.releaseYear}}</p>
+            <p class="card-text">Catégories:</p>
             <ul class="list-unstyled">
-              <li *ngFor="let category of movie.categories">{{category.label}}</li>
+              <li *ngFor="let category of movie.categories">- {{category.label}}</li>
             </ul>
           </div>
         </div>

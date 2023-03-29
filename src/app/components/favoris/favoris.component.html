@@ -1,1 +1,18 @@
-<p>favoris works!</p>
+<h1>Mes favoris</h1>
+<div class="container">
+    <div class="row mt-3">
+      <div class="col-sm-6 col-md-4 col-lg-3" *ngFor="let movie of movies$ |async">
+        <div class="card mb-3">
+          <img [src]="movie.poster" class="card-img-top" alt="{{movie.title}}">
+          <div class="card-body">
+            <h5 (click)="toggleFavori(movie)" class="card-title" [class.favori]="movie.isFavorite" [class.notfavori]="!movie.isFavorite">{{movie.title}}</h5>
+            <p class="card-text">Release Year: {{movie.releaseYear}}</p>
+            <p class="card-text">Categories:</p>
+            <ul class="list-unstyled">
+              <li *ngFor="let category of movie.categories">{{category.label}}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
