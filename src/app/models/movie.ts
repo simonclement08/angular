@@ -6,6 +6,7 @@ export class Movie {
     public title: string,
     public poster: string,
     public releaseYear: number,
-    public categories: Category[]
+    public categories: Category[],
+    public isFavorite: boolean
   ) {}
 }
