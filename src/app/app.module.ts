@@ -5,6 +5,8 @@ import { HomeComponent } from './components/home/home.component';
 import { MoviesComponent } from './components/movies/movies.component';
 import { MovieComponent } from './components/movie/movie.component';
 import { FavorisComponent } from './components/favoris/favoris.component';
+import { AppRoutingModule } from './app-routing.module';
+import { NavComponent } from './components/nav/nav.component';
 
 @NgModule({
   declarations: [
@@ -13,8 +15,9 @@ import { FavorisComponent } from './components/favoris/favoris.component';
     MoviesComponent,
     MovieComponent,
     FavorisComponent,
+    NavComponent,
   ],
-  imports: [ BrowserModule ],
+  imports: [ BrowserModule, AppRoutingModule ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule {}
