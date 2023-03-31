@@ -1,0 +1,12 @@
+<div class="card-body">
+    <h5 class="card-title">{{ todo.title }}</h5>
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" [checked]="todo.isCompleted" (change)="onToggleComplete()">
+      <label class="form-check-label" >
+        {{ todo.isCompleted ? 'Fait' : 'à Faire' }}
+      </label>
+    </div>
+    <button class="btn btn-sm btn-outline-danger mt-3" (click)="onDelete()">
+      <i class="bi bi-trash"></i>
+    </button>
+</div>

@@ -1,0 +1,10 @@
+<div class="select-user">
+    <h2 class="select-user__title">Selectionner un utilisateur</h2>
+    <div class="select-user__list">
+      <div class="select-user__item" *ngFor="let user of users">
+        <button class="select-user__button" (click)="selectUser(user)">
+          {{ user.name }}
+        </button>
+      </div>
+    </div>
+</div>

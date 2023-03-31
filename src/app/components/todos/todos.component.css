@@ -1,0 +1,66 @@
+.todos-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 50px;
+}
+
+.todo-list {
+    width: 40%;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+}
+
+.todo-list h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.todo-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+}
+
+.todo-item.done {
+    background-color: #d1f1e8;
+    color: #6abf8a;
+}
+
+.todo-item .category {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.todo-item .buttons {
+    display: flex;
+    align-items: center;
+}
+
+.todo-item .buttons button {
+    margin-left: 10px;
+    padding: 5px;
+    border-radius: 3px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.todo-item .buttons .delete {
+    background-color: #ff5252;
+    color: #fff;
+}
+
+.todo-item .buttons .edit {
+    background-color: #2196f3;
+    color: #fff;
+}
+  
