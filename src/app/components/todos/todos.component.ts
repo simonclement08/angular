@@ -12,7 +12,6 @@ import { TodoService } from 'src/app/shared/services/todo-service';
 export class TodosComponent {
 
   todos$ = this._todoService.todos$;
-  selectedTodo!: Todo;
   categories$ = this._categoryService.categories$;
   selectedCategory = 0;
   currentUser = this._userService.getCurrentUser();
@@ -23,25 +22,12 @@ export class TodosComponent {
     private _userService: UserService,
   ) { }
 
-  selectTodo(selectedTodo: Todo) {
-    this.selectedTodo = selectedTodo;
-  }
 
-  toggleStateTodo(todo: Todo) {
-    todo.isCompleted = !todo.isCompleted;
-    this._todoService.update(todo);
-  }
-
-  editTodo(todo: Todo) {
-    this._todoService.update(todo);
-  }
-
-  deleteTodo(id?: string) {
-    this._todoService.delete(id);
-  }
-
-  selectCategory() {
-    console.log('Selected item:', this.selectedCategory);
-    //this.selectedCategory = selectedCategory;
+  onCategoryChange() {
+    if (this.selectedCategory != 0) {
+      this._todoService.findByUserWithFilter(this.currentUser, this.selectedCategory);
+    } else {
+      this._todoService.findByUser(this.currentUser);
+    }
   }
 }

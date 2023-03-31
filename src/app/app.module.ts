@@ -10,6 +10,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { SelectUserComponent } from './components/select-user/select-user.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { TodoFormComponent } from './components/todo-form/todo-form.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { FormsModule } from '@angular/forms';
     TodoComponent,
     NavComponent,
     SelectUserComponent,
+    TodoFormComponent,
   ],
   imports: [ 
     BrowserModule,

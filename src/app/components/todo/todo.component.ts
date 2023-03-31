@@ -1,6 +1,7 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Category } from 'src/app/shared/models/category';
 import { Todo } from 'src/app/shared/models/todo';
+import { TodoService } from 'src/app/shared/services/todo-service';
 @Component({
   selector: 'app-todo',
   templateUrl: './todo.component.html',
@@ -8,17 +9,17 @@ import { Todo } from 'src/app/shared/models/todo';
 })
 export class TodoComponent {
   @Input() todo!: Todo;
-  @Output() deleteTodo = new EventEmitter<Todo>();
-  @Output() updateTodo = new EventEmitter<Todo>();
 
-  constructor() { }
+  constructor(
+    private _todoService: TodoService
+  ) { }
 
-  onDelete(): void {
-    this.deleteTodo.emit(this.todo);
+  toggleStateTodo(todo: Todo) {
+    todo.isCompleted = !todo.isCompleted;
+    this._todoService.update(todo);
   }
 
-  onToggleComplete(): void {
-    const updatedTodo = { ...this.todo, completed: !this.todo.isCompleted };
-    this.updateTodo.emit(updatedTodo);
+  deleteTodo(id?: number) {
+    this._todoService.delete(id);
   }
 }

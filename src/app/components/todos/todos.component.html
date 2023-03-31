@@ -14,11 +14,16 @@
         </div>
         <div class="col-sm-4">
             <h2>Filtre par catégorie</h2>
-            <select class="form-select mb-3" (change)="selectCategory()" [(ngModel)]="selectedCategory">
+            <select class="form-select mb-3" [(ngModel)]="selectedCategory" (ngModelChange)="onCategoryChange()">
                 <option value="0">Toutes les catégories</option>
                 <option *ngFor="let category of categories$ |async" [value]="category.id">{{ category.name }}</option>
             </select>
         </div>
     </div>
+    <div class="row">
+        <app-todo-form></app-todo-form>
+    </div>
 </div>
+
+
   

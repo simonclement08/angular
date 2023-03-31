@@ -1,7 +1,7 @@
 <div class="container my-5">
     <div class="home">
-        <h1>Bienvenue !</h1>
-        <p *ngIf="!selectedUser">Sélectionner un utilisateur pour voir ses taches</p>
-        <button *ngIf="selectedUser" routerLink="/todos">Voir mes tâches</button>
+        <h1>Bienvenue<span *ngIf="currentUser"> {{currentUser.name}}</span> !</h1>
+        <p *ngIf="!currentUser">Sélectionner un utilisateur pour voir ses taches</p>
+        <button *ngIf="currentUser" routerLink="/todos">Voir mes tâches</button>
       </div>
 </div>

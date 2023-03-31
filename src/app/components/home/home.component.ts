@@ -8,9 +8,9 @@ import { UserService } from 'src/app/shared/services/user-service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
-  selectedUser: User | null;
+  currentUser: User;
 
-  constructor(private userService: UserService) {
-    this.selectedUser = this.userService.getCurrentUser();
+  constructor(private _userService: UserService) {
+    this.currentUser = this._userService.getCurrentUser();
   }
 }
