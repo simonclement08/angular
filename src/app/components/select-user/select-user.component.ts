@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { User } from 'src/app/shared/models/user';
+import { TodoService } from 'src/app/shared/services/todo-service';
 import { UserService } from 'src/app/shared/services/user-service';
 
 @Component({
@@ -11,16 +12,21 @@ import { UserService } from 'src/app/shared/services/user-service';
 export class SelectUserComponent implements OnInit {
   users: User[] = [];
 
-  constructor(private router: Router, private userService: UserService) { }
+  constructor(
+    private router: Router,
+    private _userService: UserService,
+    private _todosService: TodoService
+  ) { }
 
   ngOnInit(): void {
-    this.userService.users$.subscribe((users) => {
+    this._userService.users$.subscribe((users) => {
       this.users = users;
     });
   }
 
   selectUser(user: User): void {
-    this.userService.setCurrentUser(user);
+    this._userService.setCurrentUser(user);
+    this._todosService.findByUser(user);
     this.router.navigate(['/todos']);
   }
 }

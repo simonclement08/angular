@@ -37,7 +37,7 @@
         "id": "5",
         "name": "Cadeaux"
       },
-      "isCompleted": false,
+      "isCompleted": true,
       "userId": "2"
     },
     {
